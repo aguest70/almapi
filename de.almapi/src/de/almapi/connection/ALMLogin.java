@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.almapi;
+package de.almapi.connection;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;

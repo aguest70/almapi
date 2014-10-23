@@ -1,7 +1,7 @@
 /**
  * 
  */
-package de.almapi;
+package de.almapi.connection;
 
 import de.gawky.properties.ApplicationProperty;
 
@@ -14,7 +14,7 @@ public class ALMProperties {
 	/**
 	 * base URL of the HP ALM REST service
 	 * 
-	 * @see RestRepository
+	 * @see ALMConnection
 	 */
 	public static final ApplicationProperty ALM_REST_BASE_URL = new ApplicationProperty(
 			"alm_rest_base_url", "http://alm/qcbin/rest"); //$NON-NLS-1$
@@ -30,14 +30,14 @@ public class ALMProperties {
 	/**
 	 * ALM domain name
 	 * 
-	 * @see RestRepository
+	 * @see ALMConnection
 	 */
 	public static final ApplicationProperty ALM_DOMAIN = new ApplicationProperty("alm_domain", "DOMAIN"); //$NON-NLS-1$
 
 	/**
 	 * ALM project name
 	 * 
-	 * @see RestRepository
+	 * @see ALMConnection
 	 */
 	public static final ApplicationProperty ALM_PROJECT = new ApplicationProperty("alm_project", "PROJECT"); //$NON-NLS-1$
 

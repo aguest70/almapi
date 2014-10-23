@@ -1,4 +1,4 @@
-package de.almapi;
+package de.almapi.connection;
 
 import java.util.ArrayList;
 import java.util.Collection;
