@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="lib/jsr311-api-1.1.jar"/>
 	<classpathentry kind="lib" path="lib/jersey-bundle-1.5-ea09.jar" sourcepath="lib/src/jersey-bundle-1.5-ea09-sources.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/de.gawky"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

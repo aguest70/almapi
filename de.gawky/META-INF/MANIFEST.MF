@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GawkyUtils
+Bundle-SymbolicName: de.gawky
+Bundle-Version: 0.0.1
+Export-Package: de.gawky.properties,
+ de.gawky.treemodels

@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ALMAPI
+Bundle-SymbolicName: de.almapi
+Bundle-Version: 0.0.1
+Bundle-ClassPath: almapi.jar,
+ lib/commons-codec-1.5.jar,
+ lib/jsr311-api-1.1.jar,
+ lib/jersey-bundle-1.5-ea09.jar
+Export-Package: de.almapi.connection,
+ de.almapi.domain
+Bundle-Vendor: Sebastian Kirchner
+Require-Bundle: de.gawky;bundle-version="0.0.1"
