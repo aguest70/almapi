@@ -42,6 +42,13 @@ public class ALMConnection {
 	 * @see ALMConnection#getEntities(String, int)
 	 */
 	public static final String DEFECTS_SERVICE_NAME = "defects";
+	/**
+	 * Constant for the name of the release service
+	 * 
+	 * @see ALMConnection#getEntity(String, int)
+	 * @see ALMConnection#getEntities(String, int)
+	 */
+	public static final String RELEASES_SERVICE_NAME = "releases";
 
 	private static final Logger LOG = Logger.getLogger(ALMConnection.class.getName());
 	/*
@@ -55,14 +62,29 @@ public class ALMConnection {
 	private CookieStore loginCookies = new CookieStore();
 	
 	private boolean connected = false;
-	
-	
+
 	public boolean isConnected() {
 		return this.connected;
 	}
 
 	/**
+	 * TODO
 	 * 
+	 * <p>
+	 * Using a default page size of 20.
+	 * </p>
+	 * 
+	 * @param serviceName
+	 * @return
+	 * 
+	 * @see ALMConnection#getEntities(String, int);
+	 */
+	public List<Entity> getEntities(final String serviceName) {
+		return this.getEntities(serviceName, 20);
+	}
+
+	/**
+	 * TODO
 	 * 
 	 * @param serviceName
 	 * @param pageSize
@@ -75,7 +97,7 @@ public class ALMConnection {
 		final LinkedList<Entity> result = new LinkedList<Entity>();
 
 		do{
-			final String url = ALM_REST_SERVICE_URL + "requirements?page-size=" + pageSize + "&start-index="
+			final String url = ALM_REST_SERVICE_URL + serviceName +"?page-size=" + pageSize + "&start-index="
 					+ startIndex;
 			final ClientResponse response = request(url);
 			if(response == null){
@@ -125,12 +147,12 @@ public class ALMConnection {
 	public void login(final String username, final char[] password) {
 		try{
 			loginCookies = ALMLogin.login(username, password);
+			this.connected = true;
 		}catch(IOException e){
 			LOG.log(Level.WARNING, "Login failed! No connection to the HP ALM login service.", e);
 		}catch(de.almapi.connection.ALMLogin.LoginException e){
 			LOG.log(Level.WARNING, "Login failed! Please check the provided credentials.", e);
 		}
-		this.connected = true;
 	}
 
 	/**
