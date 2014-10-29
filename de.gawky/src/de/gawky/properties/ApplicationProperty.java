@@ -44,6 +44,13 @@ public class ApplicationProperty {
 	}
 
 	/**
+	 * @return the key of the application property
+	 */
+	public String getKey() {
+		return this.key;
+	}
+
+	/**
 	 * @return the string value of the application property
 	 */
 	public String getValue() {
