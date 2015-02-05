@@ -60,7 +60,7 @@ public class ALMConnection {
 	 * The cookie store
 	 */
 	private CookieStore loginCookies = new CookieStore();
-	
+
 	private boolean connected = false;
 
 	public boolean isConnected() {
@@ -79,7 +79,7 @@ public class ALMConnection {
 	 * 
 	 * @see ALMConnection#getEntities(String, int);
 	 */
-	public List<Entity> getEntities(final String serviceName) {
+	public List<IEntity> getEntities(final String serviceName) {
 		return this.getEntities(serviceName, 20);
 	}
 
@@ -90,14 +90,14 @@ public class ALMConnection {
 	 * @param pageSize
 	 * @return
 	 */
-	public List<Entity> getEntities(final String serviceName, final int pageSize) {
+	public List<IEntity> getEntities(final String serviceName, final int pageSize) {
 
 		int startIndex = 1;
 		int resultCount = -1;
-		final LinkedList<Entity> result = new LinkedList<Entity>();
+		final LinkedList<IEntity> result = new LinkedList<IEntity>();
 
 		do{
-			final String url = ALM_REST_SERVICE_URL + serviceName +"?page-size=" + pageSize + "&start-index="
+			final String url = ALM_REST_SERVICE_URL + serviceName + "?page-size=" + pageSize + "&start-index="
 					+ startIndex;
 			final ClientResponse response = request(url);
 			if(response == null){
